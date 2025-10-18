@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier de Sevrage Oméprazole 20mg</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .phase {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .phase-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .day {
+            border: 2px solid #ddd;
+            padding: 15px 10px;
+            text-align: center;
+            border-radius: 5px;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .day-number {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .day-date {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .take {
+            background-color: #e3f2fd;
+            border-color: #2196F3;
+        }
+        .no-take {
+            background-color: #f5f5f5;
+            border-color: #999;
+        }
+        .take-indicator {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .take .take-indicator {
+            color: #1976D2;
+        }
+        .no-take .take-indicator {
+            color: #666;
+        }
+        .checkbox-container {
+            margin-top: 8px;
+        }
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .legend {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legend-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            border: 2px solid;
+        }
+        .notes {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-left: 5px solid #4caf50;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        @media print {
+            body {
+                background-color: white;
+            }
+            .phase {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📅 Calendrier de Sevrage Oméprazole 20mg</h1>
+        <p>Début : Samedi 18 octobre 2025 (pas de prise)</p>
+        <p>Prochaine prise : Dimanche 19 octobre 2025</p>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ ATTENTION :</strong> Ce sevrage doit être supervisé par votre médecin. En cas de symptômes importants (douleurs, brûlures intenses), consultez rapidement.
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-box take" style="border-color: #2196F3;"></div>
+            <span>Jour de PRISE</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-box no-take" style="border-color: #999;"></div>
+            <span>Jour SANS prise</span>
+        </div>
+    </div>
+
+    <!-- PHASE 1 -->
+    <div class="phase">
+        <div class="phase-title">Phase 1 : Un jour sur deux (15 jours)</div>
+        <p><strong>Du 18 octobre au 1er novembre 2025</strong></p>
+        <div class="calendar">
+            <div class="day no-take">
+                <div class="day-number">Jour 1</div>
+                <div class="day-date">Sam 18 oct</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 2</div>
+                <div class="day-date">Dim 19 oct</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 3</div>
+                <div class="day-date">Lun 20 oct</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 4</div>
+                <div class="day-date">Mar 21 oct</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 5</div>
+                <div class="day-date">Mer 22 oct</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 6</div>
+                <div class="day-date">Jeu 23 oct</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 7</div>
+                <div class="day-date">Ven 24 oct</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 8</div>
+                <div class="day-date">Sam 25 oct</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 9</div>
+                <div class="day-date">Dim 26 oct</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 10</div>
+                <div class="day-date">Lun 27 oct</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 11</div>
+                <div class="day-date">Mar 28 oct</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 12</div>
+                <div class="day-date">Mer 29 oct</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 13</div>
+                <div class="day-date">Jeu 30 oct</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 14</div>
+                <div class="day-date">Ven 31 oct</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 15</div>
+                <div class="day-date">Sam 1 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase">
+        <div class="phase-title">Phase 2 : Un jour sur trois (15 jours)</div>
+        <p><strong>Du 2 novembre au 16 novembre 2025</strong></p>
+        <div class="calendar">
+            <div class="day take">
+                <div class="day-number">Jour 16</div>
+                <div class="day-date">Dim 2 nov</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 17</div>
+                <div class="day-date">Lun 3 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 18</div>
+                <div class="day-date">Mar 4 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 19</div>
+                <div class="day-date">Mer 5 nov</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 20</div>
+                <div class="day-date">Jeu 6 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 21</div>
+                <div class="day-date">Ven 7 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 22</div>
+                <div class="day-date">Sam 8 nov</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 23</div>
+                <div class="day-date">Dim 9 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 24</div>
+                <div class="day-date">Lun 10 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 25</div>
+                <div class="day-date">Mar 11 nov</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 26</div>
+                <div class="day-date">Mer 12 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 27</div>
+                <div class="day-date">Jeu 13 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 28</div>
+                <div class="day-date">Ven 14 nov</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 29</div>
+                <div class="day-date">Sam 15 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 30</div>
+                <div class="day-date">Dim 16 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="phase">
+        <div class="phase-title">Phase 3 : Un jour sur quatre (15 jours)</div>
+        <p><strong>Du 17 novembre au 1er décembre 2025</strong></p>
+        <div class="calendar">
+            <div class="day take">
+                <div class="day-number">Jour 31</div>
+                <div class="day-date">Lun 17 nov</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 32</div>
+                <div class="day-date">Mar 18 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 33</div>
+                <div class="day-date">Mer 19 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 34</div>
+                <div class="day-date">Jeu 20 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 35</div>
+                <div class="day-date">Ven 21 nov</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 36</div>
+                <div class="day-date">Sam 22 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 37</div>
+                <div class="day-date">Dim 23 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 38</div>
+                <div class="day-date">Lun 24 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 39</div>
+                <div class="day-date">Mar 25 nov</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 40</div>
+                <div class="day-date">Mer 26 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 41</div>
+                <div class="day-date">Jeu 27 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 42</div>
+                <div class="day-date">Ven 28 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 43</div>
+                <div class="day-date">Sam 29 nov</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 44</div>
+                <div class="day-date">Dim 30 nov</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 45</div>
+                <div class="day-date">Lun 1 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="phase">
+        <div class="phase-title">Phase 4 : Un jour sur cinq (15 jours)</div>
+        <p><strong>Du 2 décembre au 16 décembre 2025</strong></p>
+        <div class="calendar">
+            <div class="day no-take">
+                <div class="day-number">Jour 46</div>
+                <div class="day-date">Mar 2 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 47</div>
+                <div class="day-date">Mer 3 déc</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 48</div>
+                <div class="day-date">Jeu 4 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 49</div>
+                <div class="day-date">Ven 5 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 50</div>
+                <div class="day-date">Sam 6 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 51</div>
+                <div class="day-date">Dim 7 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 52</div>
+                <div class="day-date">Lun 8 déc</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 53</div>
+                <div class="day-date">Mar 9 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 54</div>
+                <div class="day-date">Mer 10 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 55</div>
+                <div class="day-date">Jeu 11 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 56</div>
+                <div class="day-date">Ven 12 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 57</div>
+                <div class="day-date">Sam 13 déc</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 58</div>
+                <div class="day-date">Dim 14 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 59</div>
+                <div class="day-date">Lun 15 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 60</div>
+                <div class="day-date">Mar 16 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 5 -->
+    <div class="phase">
+        <div class="phase-title">Phase 5 : Un jour sur six puis ARRÊT (15 jours)</div>
+        <p><strong>Du 17 décembre au 31 décembre 2025</strong></p>
+        <div class="calendar">
+            <div class="day no-take">
+                <div class="day-number">Jour 61</div>
+                <div class="day-date">Mer 17 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 62</div>
+                <div class="day-date">Jeu 18 déc</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 63</div>
+                <div class="day-date">Ven 19 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 64</div>
+                <div class="day-date">Sam 20 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 65</div>
+                <div class="day-date">Dim 21 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 66</div>
+                <div class="day-date">Lun 22 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 67</div>
+                <div class="day-date">Mar 23 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 68</div>
+                <div class="day-date">Mer 24 déc</div>
+                <div class="take-indicator">PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 69</div>
+                <div class="day-date">Jeu 25 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 70</div>
+                <div class="day-date">Ven 26 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 71</div>
+                <div class="day-date">Sam 27 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 72</div>
+                <div class="day-date">Dim 28 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 73</div>
+                <div class="day-date">Lun 29 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day take">
+                <div class="day-number">Jour 74</div>
+                <div class="day-date">Mar 30 déc</div>
+                <div class="take-indicator">DERNIÈRE PRISE</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+            <div class="day no-take">
+                <div class="day-number">Jour 75</div>
+                <div class="day-date">Mer 31 déc</div>
+                <div class="take-indicator">SANS</div>
+                <div class="checkbox-container"><input type="checkbox" class="checkbox"></div>
+            </div>
+        </div>
+        <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-radius: 5px;">
+            <strong>🎉 Fin du protocole le 31 décembre 2025</strong><br>
+            Dernière prise : mardi 30 décembre 2025
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Notes importantes :</h3>
+        <ul>
+            <li><strong>Surveillez vos symptômes :</strong> Notez quotidiennement l'intensité des brûlures (de 0 à 10)</li>
+            <li><strong>En cas de symptômes importants :</strong> N'hésitez pas à reprendre une prise si nécessaire et consultez votre médecin</li>
+            <li><strong>Antiacides de secours :</strong> Ayez des antiacides rapides type Gaviscon ou Maalox à disposition</li>
+            <li><strong>Hydratation :</strong> Buvez suffisamment d'eau</li>
+            <li><strong>Alimentation :</strong> Respectez le régime anti-reflux pendant toute la durée du sevrage</li>
+            <li><strong>Consultation médicale :</strong> Prévoyez un rendez-vous avec votre médecin pour faire le point</li>
+        </ul>
+    </div>
+
+    <div style="margin-top: 30px; padding: 20px; background-color: #e3f2fd; border-radius: 8px; text-align: center;">
+        <p style="margin: 0;"><strong>💪 Bon courage pour votre sevrage !</strong></p>
+        <p style="margin: 10px 0 0 0; font-size: 0.9em;">N'oubliez pas : votre santé avant tout. Consultez si nécessaire.</p>
+    </div>
+</body>
+</html>
